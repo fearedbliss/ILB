@@ -4,7 +4,7 @@
 
 - Distro: [Pop OS 20.04 (Ubuntu 20.04 Based)](https://pop.system76.com/)
 - Wine Version: [5.17 (Staging, Upstream)](https://www.winehq.org/)
-- Requires: [DXVK (1.7.1+)](https://github.com/doitsujin/dxvk)
+- Requires: Vulkan support, [DXVK (1.7.1+)](https://github.com/doitsujin/dxvk)
 - Source: [GOG](https://www.gog.com/)
 - Tester: Jonathan Vasquez (fearedbliss)
 
