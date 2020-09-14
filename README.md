@@ -2,11 +2,15 @@
 
 ## Testing Information
 
-- Distro: [Pop OS 20.04 (Ubuntu 20.04 Based)](https://pop.system76.com/)
-- Wine Version: [5.17 (Staging, Upstream)](https://www.winehq.org/)
-- Requires: Vulkan support, [DXVK (1.7.1+)](https://github.com/doitsujin/dxvk)
-- Source: [GOG](https://www.gog.com/)
 - Tester: Jonathan Vasquez (fearedbliss)
+- Distro: [Pop OS 20.04 (Ubuntu-based)](https://pop.system76.com/)
+- Wine Version: [5.17 (Staging, Upstream)](https://www.winehq.org/)
+- Source: [GOG](https://www.gog.com/)
+- Requires: 
+  - A graphic card and drivers that support Vulkan.
+  - [DXVK (1.7.1+)](https://github.com/doitsujin/dxvk) - A Vulkan-based
+    implementation of Direct3D 9-11 for Linux / Wine.
+
 
 ## Notes
 
@@ -15,13 +19,50 @@
   and run it directly through a vanilla version of Wine without requiring
   Proton or Steam.
 - Works in both 32 and 64 bit Wine Bottles with the default settings.
-- The game will not run without DXVK installed (It will lock up with a black
-  screen upon launching the game).
+- The game will not run without **`DXVK`** installed (It will lock up with a
+  black screen upon launching the game). This means your graphic card, drivers,
+  and thus operating system need to support Vulkan.
 - These instructions assume you have already installed Wine on your system.
   If you don't have Wine installed yet, please follow the instructions on
   [Wine's download page](https://wiki.winehq.org/Download).
 
-## Instructions
+## Checking for Vulkan Support
+
+In order for this to work, your graphic card and drivers need to support Vulkan.
+Most modern cards should support it, However, we can gather some information and
+check if it does.
+
+The **`glxinfo`** command can be used to get the device name for our card that
+we are looking. Once we have this, we can check the unofficial
+[Vulkan DB](https://vulkan.gpuinfo.org/) to see if our card is compatible. This
+is a database of user-provided information, so if you don't find your card on
+there, that doesn't automatically mean that it isn't supported. In this case,
+the best thing to do would be to just follow the instructions below, and try to
+run the game to see if it works.
+
+In Pop OS (Ubuntu-based), we can install **`mesa-utils`** in order to get the
+**`glxinfo`** command. Your distro may have called the package something else.
+After you install it, you can run the following to get the needed info:
+
+```
+$ glxinfo | grep Device:
+    Device: Mesa Intel(R) UHD Graphics (CML GT2) (0x9b41)
+```
+
+With that piece of info, you can now check the online DB to see if it finds
+anything. You may need to modify the device name in order to get results. I had
+to change it to the following before I got matches:
+
+```
+Intel(R) UHD Graphics (CML GT2)
+```
+
+At the time of writing, I got a single result with a count of three. Once I
+clicked into it, I selected one of the reports, and looked at the device id.
+The device id also matched the one that was listed in the **`Device`** section
+above: **`(0x9b41)`**.
+
+## Installation Instructions
 
 1. Download ILB from GOG's offline backups. You can reach this by logging into
    your GOG account on their website, going to your [games collection](https://www.gog.com/account)
