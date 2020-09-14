@@ -1,4 +1,4 @@
-# How to install It Lurks Below from GOG using vanilla Wine and DXVK.
+# How to install It Lurks Below on Linux (GOG, Vanilla Wine, and DXVK)
 
 ## Testing Information
 
@@ -11,8 +11,8 @@
 ## Notes
 
 - GOG is a DRM-free gaming platform which is an alternative to Steam. Because of
-  this, we can easily download the DRM free version of **`It Lurks Below`**
-  that we can run directly through a vanilla version of Wine without requiring
+  this, we can easily download the DRM-free version of **`It Lurks Below`**
+  and run it directly through a vanilla version of Wine without requiring
   Proton or Steam.
 - Works in both 32 and 64 bit Wine Bottles with the default settings.
 - The game will not run without DXVK installed (It will lock up with a black
@@ -79,19 +79,39 @@ the new installer. This should install the new ILB and overwrite the existing
 files in place. Everything else is already set up properly so nothing else
 needs to change.
 
-## Outdated Versions (Offline Installer vs GOG Galaxy)
+## Outdated Versions (Offline Installer vs [GOG Galaxy](https://www.gog.com/galaxy))
 
 It seems that **`GOG`** sometimes only provides outdated versions of their
 games in the **`Download Offline Backup Game Installers`** section, as oppose to
-if you were to use **`GOG Galaxy`**, you always are able to automatically
-download the latest version. Since **`GOG Galaxy`** doesn't work on Linux (Not
-even with Wine), you can use a physical or virtual Windows machine to run
-**`GOG Galaxy`** there, and thus you'll be able to download **`It Lurks Below`**
-, and then copy the **`It Lurks Below`** folder from that machine to your Linux
-computer. Once that's done, you can simply run it through Wine as normal, using
-the same prefix you previously set up. This is not the best solution, but until
-**`GOG`** fixes this issue, this is a definitive way to still be able to
-download the latest version as soon as it is available on **`GOG`**.
+if you were to use **`GOG Galaxy`**, you are always able to automatically
+download the latest version of their games through it. Since **`GOG Galaxy`**
+doesn't work on Linux (Not even with Wine), you can use a physical or virtual
+Windows machine to run **`GOG Galaxy`** there, and download the latest version
+of **`It Lurks Below`**. Once that's done, simply swap the old
+**`It Lurks Below`** folder on your Linux machine, with the new one. This is not
+the best solution, but until **`GOG`** fixes these issues, this is a working
+workaround to still be able to download the latest version of the game as soon
+as it is available on **`GOG`**. Also as a side note, the actual location
+of where the **`It Lurks Below`** folder exists doesn't matter, as long as
+when you launch the game, you are using the correct prefix that we set up
+previously. So if there is a place on your drive (avoid network drives) that you
+can easily get to to swap the folder during updates, definitely give that a shot.
+
+### [Minigalaxy](https://github.com/sharkwouter/minigalaxy)
+
+**`Minigalaxy`** is an open source alternative client to **`GOG Galaxy`** for
+Linux. I attempted to use this client to see if I can download the latest
+version of **`It Lurks Below`** that would have gotten pulled if we were to use
+**`GOG Galaxy`**, however this wasn't the case. **`Minigalaxy`** pulled the same
+outdated version of the game as the **`Offline Installer`**. This makes me
+believe that **`Minigalaxy`** is pulling the **`Offline Installer`** for each of
+your games, rather than pulling from whatever source **`GOG Galaxy`** is pulling
+from. Due to this, I would recommend sticking with the alternative methods
+described above since it would mean less things installed on your system, and
+also easier control of your Wine prefixes through your own means, rather than
+using the automatic Wine prefix creation that **`Minigalaxy`** does. If you do
+use **`Minigalaxy`** to do your installations, you'll still need to set up DXVK
+and any other modifications required, to those prefixes as well.
 
 ## Launch Script
 
