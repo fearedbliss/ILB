@@ -79,6 +79,20 @@ the new installer. This should install the new ILB and overwrite the existing
 files in place. Everything else is already set up properly so nothing else
 needs to change.
 
+## Outdated Versions (Offline Installer vs GOG Galaxy)
+
+It seems that **`GOG`** sometimes only provides outdated versions of their
+games in the **`Download Offline Backup Game Installers`** section, as oppose to
+if you were to use **`GOG Galaxy`**, you always are able to automatically
+download the latest version. Since **`GOG Galaxy`** doesn't work on Linux (Not
+even with Wine), you can use a physical or virtual Windows machine to run
+**`GOG Galaxy`** there, and thus you'll be able to download **`It Lurks Below`**
+, and then copy the **`It Lurks Below`** folder from that machine to your Linux
+computer. Once that's done, you can simply run it through Wine as normal, using
+the same prefix you previously set up. This is not the best solution, but until
+**`GOG`** fixes this issue, this is a definitive way to still be able to
+download the latest version as soon as it is available on **`GOG`**.
+
 ## Launch Script
 
 You can launch the game automatically through the desktop icon created by
